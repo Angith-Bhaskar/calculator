@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <title>calcutor</title>
+    <style>
+        body
+        {
+            background-color:grey;
+        }
+        .a
+        {
+            text-align:center;
+            font-family:Arial;
+            position:absolute;
+            left:50%;
+            top:50%;
+            transform:translate(-50%,-50%);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="a">
+    <label for="first">ENTER THE FIRST NUMBER </label><br>
+    <input type="number" id="f" name="f" value=""><br><br>
+    <label for="second">ENTER THE SECIND NUMBER</label><br>
+    <input type="number" id="s" name="s" value=""><br><br>
+    <p id="r"></p>
+  
+    <button onclick="cal('add')">add</button>
+    <button onclick="cal('sub')">subraction</button>
+    <button onclick="cal('mul')">multplication</button>
+    <button onclick="cal('div')">division</button>
+    </div>
+    
+    <script>
+        function cal(op)
+        {
+            let a=Number(document.getElementById("f").value);
+            let b=Number(document.getElementById("s").value);
+            let c=0;
+            if(op=="add")
+        {
+            c=a+b;
+        }
+        else if(op=="sub"){c=a-b;}
+        else if(op=="mul"){c=a*b;}
+        else if(op=="div"){c=a/b;}
+
+
+            document.getElementById("r").innerText=c;
+        }
+    </script>
+
+</body>
